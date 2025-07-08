@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class BankAccountSimulator {
     private static final Scanner input = new Scanner(System.in);
     private static int choose=0;
-    public void start(){
+    private static double savings=0.0;
+    public static void start(){
 
         do{
             System.out.println("Welcome to the Bank Account Simulator!!!");
@@ -23,16 +24,25 @@ public class BankAccountSimulator {
             }
         }while (choose!=4);
     }
-    public void checkBalance(){
-
+    private  static  void checkBalance(){
+        System.out.println("Yours savings are: " +savings);
     }
-    public void deposit(){
-
+    private static void deposit(){
+        System.out.println("Please enter the amount you want to deposit.");
+        savings +=input.nextDouble();
     }
-    public void withdraw(){
-
+    private static void withdraw(){
+        System.out.println("Please enter the amount you wish to withdraw.");
+        double amount = input.nextDouble();
+        if(savings ==0){
+            System.out.println("You currently have no savings.");
+        }else if(savings < amount){
+            System.out.println("Insufficient funds.");
+        }else{
+            savings -=amount;
+        }
     }
-    public void exit(){
+    private static void exit(){
         choose=4;
         System.out.println("We appreciate you using our bank account simulator.");
         input.close();
