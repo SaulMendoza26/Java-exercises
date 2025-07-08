@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SimpleCalculator {
    private static final  Scanner input = new Scanner(System.in);
-        public static void start (){
+         public static void start (){
 
             int i;
             do {
@@ -29,6 +29,7 @@ public class SimpleCalculator {
                 System.out.println("El total actual: " +  total);
             }while(i!=5);
             System.out.println("Thank you by use us application");
+            input.close();
         }
         private static Double total=0.0;
         private static void addition(){
